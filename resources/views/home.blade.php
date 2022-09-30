@@ -15,7 +15,7 @@
                     <div class="alert" id="message" style="display: none"></div>
                     <div class="form-group">
                         <label for="name">Data:</label>
-                        <input type="textarea" name="data" id="data" class="form-control">
+                        <textarea name="data" id="data" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -48,7 +48,7 @@
                     <input type="hidden" id="edit_data_id" />
                     <div class="form-group">
                         <label for="name">Data</label>
-                        <input type="textarea" name="edit_data" id="edit_data" class="form-control">
+                        <textarea name="edit_data" id="edit_data" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -235,7 +235,7 @@
         });
         $(document).on('click', '.distroy_data', function(e) {
             e.preventDefault();
-           
+
             let data_id = $('#delete_data_id').val();
             $.ajaxSetup({
                 headers: {
@@ -251,7 +251,7 @@
                     $('#success_message').addClass(data.class_name);
                     $('#success_message').delay(10000).fadeOut('slow')
                     $('#DeleteWeeklyDataModal').modal('hide');
-                   
+
                     fetchData();
                 }
             });

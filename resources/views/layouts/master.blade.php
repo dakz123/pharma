@@ -34,13 +34,10 @@
             @include('layouts.inc.admin-footer')
         </div>
     </div>
-    <script src="{{asset('assets/js/scripts.js')}}" ></script>
-    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}" ></script>
-   
-    @yield('third_party_scripts')
-    @stack('page_scripts')
-    <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}" ></script> 
-    @yield('scripts')
+    <script src="{{asset('assets/js/scripts.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+
+
 </body>
 
 </html>

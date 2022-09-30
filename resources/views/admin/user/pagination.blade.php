@@ -29,12 +29,20 @@
             @endif
 
             @if($row->status==0)
-            <td><i id="{{ $row->id }}" class="check_data fa fa-check text-secondary px-2 " style="cursor:pointer"></i>
+            <td><button type="submit" class="check_data fa fa-check text-secondary px-2 " style="cursor:pointer">
+                    {!! Form::open(['method' => 'PUT', 'route' => ['admin.user.update', $row->id]]) !!}
+                    {!! Form::submit(trans('admin.user.update')) !!}
+                    {!! Form::close() !!}
+                </button>
 
             </td>
             @else
             <td>
-                <i id="{{ $row->id }}" class="check_data fa fa-check text-success px-2 " style="cursor:pointer">
+                <button type="submit" class="check_data fa fa-check text-success px-2 " style="cursor:pointer">
+                    {!! Form::open(['method' => 'PUT', 'route' => ['admin.user.update', $row->id]]) !!}
+                    {!! Form::submit(trans('admin.user.update')) !!}
+                    {!! Form::close() !!}
+                </button>
             </td>
             @endif
         </tr>

@@ -20,16 +20,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::resource('/home', App\Http\Controllers\HomeController::class);
 
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
-    
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
-     Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('dashboard');
-     //Route::resource('/user', App\Http\Controllers\Admin\UserController::class);
-     Route::get('user/', [App\Http\Controllers\Admin\UserController::class,'index'])->name('admin.user.index');
-     Route::get('user/create', [App\Http\Controllers\Admin\UserController::class,'create'])->name('admin.user.create');
-     Route::put('user/{id}', [App\Http\Controllers\Admin\UserController::class,'update'])->name('admin.user.update');
 
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('user/', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user.index');
+    Route::put('user/{id}', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin.user.update');
 });
